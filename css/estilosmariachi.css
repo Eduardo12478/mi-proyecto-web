@@ -1,0 +1,481 @@
+/* configuraciones globales */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/* Cuerpo de la pagina  */
+body {
+    background-color: white;
+    color: rgb(62, 62, 62);
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+section {
+    padding: 70px 0;  /* separacion de espacios de la pagina  */
+}
+
+/* Encabezados */
+
+h1,
+h2,
+h3{
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 50px;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* nav */
+
+/* home-container */
+
+header {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.705), rgb(0, 0, 0, 0.705)), url(/Imagenes/Gemini_Generated_Image_83jgqk83jgqk83jg.png);
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+
+.Logo { 
+    height: 150px;
+    width: auto;
+    float: left;
+    margin-left: 20px; /* controla mas el margen de la izquierda */
+}
+
+.nav {
+    float: right;
+    list-style: none;
+    margin-top: 60px;
+    margin-right: 70px;
+}
+
+.nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+
+.nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    transition: border-bottom 0.2s;
+}
+
+.nav li a:hover {
+    border-bottom: 2px solid rgb(13, 111, 202) /* sirve para el sombreado de los botones en azul sobre nosotros */
+}
+
+.home-container {
+    display: block;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* botones */
+.btn,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    border: 2px solid rgb(15, 99, 167);
+    color: rgba(124, 124, 52, 0.891);
+    margin-right: 5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* sirve para darle formato de sombra al boton del formulario */
+.btn-conctac:hover,
+input[type=submit]:hover {
+    background-color: blue;
+     
+}
+
+
+
+/* section-description */
+.text-center {
+    line-height: 145%;
+    width: 70%;
+    margin: 0 auto;
+    text-align: justify; /* centrar el texto de ambos lados */
+}
+
+/* section-plans */
+
+.section-plans {
+    background-color: #f4f4f4;
+}
+
+.plan-content {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0 2px 2px #efefef;
+    text-align: justify;
+}
+
+.plan-content div {
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.btn-Ingresa {
+    color: black;
+}
+
+.btn-Ingresa:hover {
+    background-color: blue;
+    color: white;
+}
+
+.plan-price {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: blue;
+}
+
+.plan-content ul {
+    list-style: none;
+}
+
+.plan-content ul li {
+    padding: 5px 0;
+}
+
+.plan-price-discount {
+    color: red;
+}
+
+
+
+/* section-imagen */
+
+
+.projects-grid {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos */
+    padding: 0; /* Elimina el padding de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+}
+
+.projects-grid li {
+    flex-basis: 25%; /* Cada ítem ocupa el 25% del ancho disponible (4 por fila) */
+    max-width: 25%;
+    padding: 5px; /* Espacio entre las imágenes */
+    box-sizing: border-box;
+    margin: 0;
+    /* Define una altura fija para el contenedor de cada imagen */
+    height: 200px; /* Ajusta esta altura a tu gusto, por ejemplo, 180px, 220px */
+}
+
+.photo {
+    width: 100%;
+    height: 100%; /* La figura ahora ocupa el 100% de la altura de su li */
+    margin: 0;
+    overflow: hidden; /* Muy importante: oculta la parte de la imagen que se desborda */
+    background-color: black; /* Color de fondo si la imagen no carga */
+    display: flex; /* Añadido para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+}
+
+.photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: 100%; /* La imagen ocupará el 100% del espacio de su contenedor */
+    object-fit: cover; /* **Esto es clave:** Hace que la imagen se "ajuste y recorte" para cubrir el contenedor */
+    transform: scale(1.15); /* Efecto de zoom inicial */
+    transition: transform 0.05s, opacity 0.05s;
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    -webkit-transition: -webkit-transform 0.05s, opacity 0.05s;
+}
+
+.photo img:hover {
+    opacity: 1;
+    transform: scale(1); /* Vuelve al tamaño normal en hover */
+}
+
+/* Opcional: Para el título de la galería */
+.section-image h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+/* *** FIN DE LA MODIFICACIÓN IMPORTANTE *** */
+
+
+/* contact */
+
+.contact-from{
+    width: 60%;
+    margin:  0 auto;
+}
+
+input[type=text],
+input[type=tel],
+select,
+textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea{
+   min-height: 150px;
+}
+
+*:focus{
+    outline: none;
+}
+
+/* image fopter */
+
+.section-img-footer{
+    background-image: -webkit-repeating-linear-gradient( rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8)), url(/Imagenes/Gemini_Generated_Image_83jgqk83jgqk83jg.png) ;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8)), url(/Imagenes/Gemini_Generated_Image_83jgqk83jgqk83jg.png) ;
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+footer {
+    /* Fusión de fondo e imagen (quitamos .section-img-footer) */
+    background-color: rgb(31, 29, 29); 
+    background-image: 
+        /* Overlay negro transparente, en lugar del color sólido */
+        linear-gradient( rgba(31, 29, 29, 0.85), rgba(31, 29, 29, 0.85)), 
+        /* Tu imagen de fondo de guitarras */
+        url(/Imagenes/Gemini_Generated_Image_83jgqk83jgqk83jg.png) ;
+    background-size: cover;
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+
+    /* Estilos de espaciado y texto */
+    padding: 30px; 
+    font-size: 80%;
+    color: #fff; /* Asegura que el texto general sea blanco */
+    
+    /* SOLUCIÓN AL PROBLEMA DE LOS FLOTANTES: Obliga al footer a contener todo */
+    overflow: hidden; 
+}
+
+/* Estilos para asegurar que las listas (redes y nav)
+  se muestren horizontalmente y se alineen
+*/
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+/* El estilo de texto de copyright */
+footer p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+    /* SOLUCIÓN 2: clear: both; para que se ponga debajo de los flotantes */
+    clear: both; 
+}
+
+/* El resto de tus estilos de íconos y transiciones */
+.footer-nav li,
+.footer-nav li a,
+.social-links li,
+.social-links a{
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    transition: color 0.2s;
+}
+/* ... resto de estilos de hover ... */
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 300%;
+}
+
+
+.fa-facebook-f{
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.fa-facebook-f:hover{
+    color: #2028bc;
+}
+
+.fa-tiktok:hover{
+    color: #00aced;
+}
+
+
+.fa-instagram:hover{
+    color: #517fa4;
+}
+
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* integrantes */
+/* Estilo para el contenedor general del perfil */
+.perfil-integrante {
+    max-width: 800px; /* Limita el ancho del texto para que no se vea como una columna infinita */
+    margin: 40px auto; /* Centra el bloque en la página y añade espacio vertical */
+    padding: 20px;
+}
+
+/* Estilo para la imagen (círculo y marco) */
+.foto-fundador {
+    width: 200px; /* Tamaño fijo */
+    height: 200px;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen se vea bien dentro del círculo */
+    border: 4px solid gold; /* Marco dorado/amarillo para un toque tradicional */
+    display: block; /* Centra la imagen */
+    margin: 0 auto 20px auto;
+}
+
+/* Estilo para el Nombre (H3) y la Especialidad (H4) */
+.nombre-integrante {
+    color: #A00000; /* Un color rojo fuerte o guinda tradicional */
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.especialidad {
+    color: #444; /* Un gris oscuro, menos fuerte que el nombre */
+    font-style: italic;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+/* Estilo para el texto (Párrafos) */
+.historia-texto p {
+    line-height: 1.7; /* Mejora la legibilidad del texto largo */
+    margin-bottom: 15px;
+    text-align: justify; /* Alinea el texto a ambos lados (opcional, pero profesional) */
+}
+
+/* Contenedor que mantiene la proporción 16:9 */
+.video-embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Esto asegura la relación de aspecto 16:9 (315/560 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 15px; /* Espacio después del video */
+}
+
+/* El iframe se estira para llenar el contenedor */
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ------------------------------------------- */
+/* 1. Estilos Generales de la Sección Contacto */
+/* ------------------------------------------- */
+
+.seccion-contacto {
+    padding: 60px 0; /* Espacio arriba y abajo */
+    background-color: #f8f8f8; /* Fondo suave para que resalte la sección */
+}
+
+.titulo-pagina {
+    text-align: center;
+    font-size: 300%; /* Tamaño grande para el título principal */
+    color: #a00000; /* Un rojo mariachi clásico */
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+/* El row que contiene las dos columnas */
+.row {
+    max-width: 1140px; /* Ancho máximo para centrar el contenido */
+    margin: 0 auto; /* Centrar la fila */
+}
+
+
+
+/* Títulos de las subsecciones */
+#formulario-cotizacion h3,
+#info-adicional h3 {
+    font-size: 200%;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.descripcion-form {
+    margin-bottom: 30px;
+    color: #666;
+    line-height: 1.5;
+}

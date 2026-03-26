@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+      <meta charset="UTF-8">
+    <title>Pagina Mariachi Ortiz </title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="fontawesome/fontawesome-free-6.7.2-web/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300i,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilosmariachi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="row">
+                <img class="Logo" src="/Imagenes/Logomariachi.png" alt="">
+                <ul class="nav">
+                    <li><a href="/sobrenosotros.html">Sobre nosotros</a></li>
+                    <li><a href="/videos.html">Videos</a></li>
+                    <li><a href="/Pagina.html">Pagina principal</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="home-container">
+            <h1> Solicita tu Mariachi y Cotiza Aquí</h1>
+
+       
+        <a class="btn btn-contacto"
+            href="https://wa.me/525527224727?text=Hola,%20me%20gustaría%20solicitar%20información%20de%20servicios%20de%20mariachi."
+            target="_blank">Contacto</a>
+         </div>
+
+    </header>
+
+    <main class="seccion-contacto">
+    
+
+    <div class="row">
+        
+        <section id="formulario-cotizacion" class="col span-1-of-2">
+            <h3>Envíanos los Detalles de tu Evento</h3>
+            <p class="descripcion-form">Usa este formulario para eventos grandes o si necesitas una cotización con todos los detalles (fecha, hora, lugar y paquete específico).</p>
+
+            <form action="https://formsubmit.co/eduardo.ortiz.roque@gmail.com" method="POST">
+                
+                <div>
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="telefono">Teléfono de Contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                
+                <div>
+                    <label for="fecha-evento">Fecha del Evento:</label>
+                    <input type="date" id="fecha-evento" name="fecha-evento" required>
+                </div>
+                <div>
+                    <label for="hora-evento">Hora Aproximada:</label>
+                    <input type="time" id="hora-evento" name="hora-evento" required>
+                </div>
+                <div>
+                    <label for="tipo-servicio">Tipo de Servicio:</label>
+                    <select id="tipo-servicio" name="tipo-servicio" required>
+                        <option value="">-- Selecciona el Paquete --</option>
+                        <option value="serenata">Serenata (Paquete Básico)</option>
+                        <option value="hora-completa">Paquete por Hora</option>
+                        <option value="otro">Evento Especial / Otro</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mensaje">Dirección o Comentarios Adicionales:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Indica la colonia, alcaldía/municipio y cualquier detalle relevante."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-principal">Solicitar Cotización</button>
+
+            </form>
+        </section>
+
+        
+        <section id="info-adicional" class="col span-1-of-2">
+            <h3>O contáctanos de Inmediato</h3>
+            
+            <p>Si tu solicitud es urgente o solo quieres preguntar por la disponibilidad, te recomendamos contactarnos por **WhatsApp** o por teléfono:</p>
+            
+            <div class="datos-contacto">
+                <p><i class="fa-brands fa-whatsapp icono-contacto"></i> <strong>WhatsApp:</strong></p>
+                <a href="https://wa.me/525523418898?text=Hola,%20me%20gustaría%20solicitar%20información%20de%20servicios%20de%20mariachi." target="_blank" class="link-whatsapp">(+52) 55-2341-8898</a>
+            </div>
+
+            <div class="datos-contacto">
+                <p><i class="fa-solid fa-phone icono-contacto"></i> <strong>Llamada Directa:</strong></p>
+                <a href="tel:+525523418898" class="link-telefono">(+52) 55-2341-8898</a>
+            </div>
+            
+            <div class="datos-contacto">
+                <p><i class="fa-solid fa-envelope icono-contacto"></i> <strong>Correo Electrónico:</strong></p>
+                <a href="mailto:tunombre@mariachiortiz.com" class="link-email">luis_alberto82@live.com.mx</a>
+            </div>
+            
+            <h3 class="mt-4">Nuestra Área de Servicio</h3>
+            <p>Aunque podemos ir a casi cualquier lugar, nuestra área principal de servicio es:</p>
+            <ul>
+                <li>Ciudad de México (CDMX)</li>
+                <li>Área Metropolitana (Edo. de México) *Algunas partes </li>
+             
+            </ul>
+
+        </section>
+        
+    </div> </main>
+</body>
+</html>
