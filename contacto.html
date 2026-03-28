@@ -1,38 +1,81 @@
-<main class="seccion-contacto">
-    <div class="row">
-        <section id="formulario-cotizacion" class="col span-1-of-2">
-            <h3>Envíanos los Detalles de tu Evento</h3>
-            <p class="descripcion-form">Usa este formulario para eventos grandes o si necesitas una cotización detallada.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mariachi Ortiz</title>
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/estilosmariachi.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="row">
+                <img class="Logo" src="Imagenes/Logomariachi.png" alt="Logo Mariachi Ortiz">
+                <ul class="nav">
+                    <li><a href="index.html">Página Principal</a></li>
+                    <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </div>
+        </nav>
 
-            <div class="form-container">
-                <div class="form-group">
-                    <label for="nombre">Nombre Completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="fecha-evento">Fecha del Evento:</label>
-                    <input type="date" id="fecha-evento" name="fecha-evento" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="hora-evento">Hora Aproximada:</label>
-                    <input type="time" id="hora-evento" name="hora-evento" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="tipo-servicio">Tipo de Servicio:</label>
-                    <select id="tipo-servicio" name="tipo-servicio" required>
-                        <option value="">-- Selecciona --</option>
-                        <option value="serenata">Serenata</option>
-                        <option value="hora-completa">Paquete por Hora</option>
-                        <option value="otro">Evento Especial</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="mensaje">Comentarios:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Indica colonia/municipio y detalles."></textarea>
+        <div class="home-container">
+            <h1>Solicita tu Mariachi y Cotiza Aquí</h1>
+            <a class="btn btn-contacto"
+               href="https://wa.me/525527224727?text=Hola,%20me%20gustaría%20solicitar%20información%20de%20servicios%20de%20mariachi."
+               target="_blank">Contacto Rápido</a>
+        </div>
+    </header>
+
+    <main class="seccion-contacto">
+        <div class="row">
+            
+            <section id="formulario-cotizacion" class="col span-1-of-2">
+                <h3>Envíanos los Detalles de tu Evento</h3>
+                <p class="descripcion-form">Llena estos datos para recibir una cotización formal por WhatsApp.</p>
+
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fecha-evento">Fecha del Evento:</label>
+                        <input type="date" id="fecha-evento" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hora-evento">Hora Aproximada:</label>
+                        <input type="time" id="hora-evento" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tipo-servicio">Tipo de Servicio:</label>
+                        <select id="tipo-servicio" required>
+                            <option value="">-- Selecciona el Paquete --</option>
+                            <option value="serenata">Serenata (Paquete Básico)</option>
+                            <option value="hora-completa">Paquete por Hora</option>
+                            <option value="otro">Evento Especial / Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Dirección o Comentarios:</label>
+                        <textarea id="mensaje" rows="4" placeholder="Indica colonia y detalles relevantes."></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-principal" onclick="enviarWhatsApp()">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar por WhatsApp
+                    </button>
                 </div>
 
                 <script>
@@ -43,7 +86,11 @@
                     const servicio = document.getElementById('tipo-servicio').value;
                     const mensaje = document.getElementById('mensaje').value;
 
-                    // Tu número de destino está correcto
+                    if(!nombre || !fecha || !hora) {
+                        alert("Por favor llena los campos principales.");
+                        return;
+                    }
+
                     const telefonoMariachi = "5215527224727"; 
 
                     const texto = `¡Hola Mariachi Ortiz! 🎻%0A` +
@@ -58,37 +105,21 @@
                     window.open(url, '_blank');
                 }
                 </script>
+            </section>
 
-                <button type="button" class="btn btn-principal btn-wa" onclick="enviarWhatsApp()">
-                    <i class="fa-brands fa-whatsapp"></i> Solicitar por WhatsApp
-                </button>
-            </div>
-        </section>
+            <section id="info-adicional" class="col span-1-of-2">
+                <h3>O contáctanos de Inmediato</h3>
+                <p>Para urgencias, llámanos o escríbenos directamente:</p>
+                
+                <div class="datos-contacto">
+                    <p><i class="fa-brands fa-whatsapp icono-contacto"></i> <strong>WhatsApp:</strong></p>
+                    <a href="https://wa.me/525527224727" target="_blank" class="link-whatsapp">55-2722-4727</a>
+                </div>
 
-        <section id="info-adicional" class="col span-1-of-2">
-            <h3>O contáctanos de Inmediato</h3>
-            <p>Si tu solicitud es urgente, te recomendamos contactarnos directamente:</p>
-            
-            <div class="datos-contacto">
-                <p><i class="fa-brands fa-whatsapp icono-contacto"></i> <strong>WhatsApp Principal:</strong></p>
-                <a href="https://wa.me/525527224727?text=Hola,%20busco%20información." target="_blank" class="link-whatsapp">(+52) 55-2722-4727</a>
-            </div>
-
-            <div class="datos-contacto">
-                <p><i class="fa-solid fa-phone icono-contacto"></i> <strong>Llamada:</strong></p>
-                <a href="tel:+525527224727" class="link-telefono">(+52) 55-2722-4727</a>
-            </div>
-            
-            <div class="datos-contacto">
-                <p><i class="fa-solid fa-envelope icono-contacto"></i> <strong>Correo:</strong></p>
-                <a href="mailto:luis_alberto82@live.com.mx" class="link-email">luis_alberto82@live.com.mx</a>
-            </div>
-            
-            <h3 class="mt-4">Área de Servicio</h3>
-            <ul>
-                <li>CDMX</li>
-                <li>Área Metropolitana (algunas zonas)</li>
-            </ul>
-        </section>
-    </div> 
-</main>
+                <div class="datos-contacto">
+                    <p><i class="fa-solid fa-phone icono-contacto"></i> <strong>Llamada:</strong></p>
+                    <a href="tel:+525527224727" class="link-telefono">55-2722-4727</a>
+                </div>
+                
+                <div class="datos-contacto">
+                    <p>
