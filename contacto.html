@@ -48,46 +48,38 @@
             <h3>Envíanos los Detalles de tu Evento</h3>
             <p class="descripcion-form">Usa este formulario para eventos grandes o si necesitas una cotización con todos los detalles (fecha, hora, lugar y paquete específico).</p>
 
-            <form action="https://formsubmit.co/eduardo.ortiz.roque@gmail.com" method="POST">
-                
-                <div>
-                    <label for="nombre">Nombre Completo:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div>
-                    <label for="telefono">Teléfono de Contacto:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
-                </div>
-                <div>
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                
-                <div>
-                    <label for="fecha-evento">Fecha del Evento:</label>
-                    <input type="date" id="fecha-evento" name="fecha-evento" required>
-                </div>
-                <div>
-                    <label for="hora-evento">Hora Aproximada:</label>
-                    <input type="time" id="hora-evento" name="hora-evento" required>
-                </div>
-                <div>
-                    <label for="tipo-servicio">Tipo de Servicio:</label>
-                    <select id="tipo-servicio" name="tipo-servicio" required>
-                        <option value="">-- Selecciona el Paquete --</option>
-                        <option value="serenata">Serenata (Paquete Básico)</option>
-                        <option value="hora-completa">Paquete por Hora</option>
-                        <option value="otro">Evento Especial / Otro</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="mensaje">Dirección o Comentarios Adicionales:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Indica la colonia, alcaldía/municipio y cualquier detalle relevante."></textarea>
-                </div>
+           <script>
+function enviarWhatsApp() {
+    // 1. Obtenemos los datos del formulario
+    const nombre = document.getElementById('nombre').value;
+    const fecha = document.getElementById('fecha-evento').value;
+    const hora = document.getElementById('hora-evento').value;
+    const servicio = document.getElementById('tipo-servicio').value;
+    const mensaje = document.getElementById('mensaje').value;
 
-                <button type="submit" class="btn btn-principal">Solicitar Cotización</button>
+    // 2. Tu número de teléfono (sin espacios ni signos +)
+    const telefonoMariachi = "5215512345678"; // <--- CAMBIA ESTO POR TU NÚMERO (con 521 al inicio)
 
-            </form>
+    // 3. Creamos el mensaje amigable
+    const texto = `¡Hola Mariachi Ortiz! 🎻%0A` +
+                  `Me gustaría una cotización:%0A` +
+                  `*Nombre:* ${nombre}%0A` +
+                  `*Fecha:* ${fecha}%0A` +
+                  `*Hora:* ${hora}%0A` +
+                  `*Servicio:* ${servicio}%0A` +
+                  `*Detalles:* ${mensaje}`;
+
+    // 4. Abrimos WhatsApp
+    const url = `https://wa.me/${telefonoMariachi}?text=${texto}`;
+    window.open(url, '_blank');
+}
+</script>
+
+                <button type="button" class="btn btn-principal" onclick="enviarWhatsApp()">
+               Solicitar por WhatsApp
+               </button>
+
+        
         </section>
 
         
